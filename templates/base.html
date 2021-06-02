@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+
+    {% block style %}{% endblock %}
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <!-- Navbar files -->
+    <link
+      rel="stylesheet"
+      href="{{url_for('static', filename='css/style.css')}}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{url_for('static', filename='css/mdb.min.css')}}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='navbar.css') }}"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=yes"
+    />
+    <meta charset="UTF-8" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjx.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <script src="{{ url_for('static', filename='reviews.js') }}"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+      crossorigin="anonymous"
+    />
+
+    <title>{% block title %}{% endblock %}</title>
+  </head>
+  <body>
+    <header>
+
+      <!--<nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+          <button
+            data-backdrop="false"
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <a class="navbar-brand logo" href="/">TroTro<span>Live</span></a>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent" style="background-color: rgb(238, 234, 234);">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="background-color: rgb(238, 234, 234);">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="/">Home</a>
+              </li>
+              <a class="nav-link" href="/company">About</a>
+              <a class="nav-link" href="/team">Team</a>
+              <a class="nav-link" href="/company#carousel_0e20">Contact</a>
+              <a class="nav-link" href="/faq">FAQ</a>
+            </ul>
+
+          
+            <div class="d-flex justify-content-end">
+          
+              <button
+                data-backdrop="false"
+                type="button"
+                style="background-color: purple !important"
+                class="button btn btn-primary me-3"
+                data-bs-toggle="modal"
+                data-bs-target="#register"
+              >
+                Sign Up <i class="fas fa-user-plus ml-3"></i>
+              </button>
+              <div class="modal" id="register">
+                <div class="modal-dialog">
+          
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" style="font-weight: bold">
+                        Sign Up
+                      </h5>
+                      <button
+                        data-backdrop="false"
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                      ></button>
+                    </div>
+                    <div class="modal-body">
+                      <form>
+                        <div class="mb-3">
+                          <i class="fas fa-user prefix grey-text"></i>
+                          <label class="form-label required">Name</label>
+                          <input
+                            type="text"
+                            class="form-control validate"
+                            required
+                          />
+                        </div>
+                        <div class="mb-3">
+                          <i class="fas fa-envelope prefix grey-text"></i>
+                          <label class="form-label required">Email</label>
+                          <input
+                            type="email"
+                            class="form-control validate"
+                            required
+                          />
+                        </div>
+                        <div class="mb-3">
+                          <i class="fas fa-phone-alt prefix grey-text"></i>
+                          <label class="form-label required"
+                            >Phone Number</label
+                          >
+                          <input
+                            type="number"
+                            class="form-control validate"
+                            required
+                          />
+                        </div>
+                        <div class="mb-3">
+                          <i class="fas fa-lock prefix grey-text"></i>
+                          <label class="form-label required">Password</label>
+                          <input
+                            type="password"
+                            class="form-control validate"
+                            required
+                          />
+                        </div>
+                        <div class="mb-3">
+                          <i class="fas fa-lock prefix grey-text"></i>
+                          <label class="form-label required"
+                            >Confirm Password</label
+                          >
+                          <input
+                            type="password"
+                            class="form-control validate"
+                            required
+                          />
+                        </div>
+                      </form>
+                    </div>
+                    <div class="modal-footer">
+                      <div class="d-grid gap-2 col-6 mx-auto">
+                        <button
+                          data-backdrop="false"
+                          type="submit"
+                          style="background-color: purple !important"
+                          class="btn btn-primary"
+                        >
+                          Sign Up
+                        </button>
+                      </div>
+
+                      <p
+                        class="font-small black-text d-flex justify-content-end"
+                      >
+                        Already have an account?
+                        <a
+                          href="#"
+                          style="text-decoration: none"
+                          class="blue-text ml-1"
+                          >Sign In</a
+                        >
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+          
+              <button
+                data-backdrop="false"
+                type="button"
+                style="background-color: purple !important"
+                class="btn btn-primary"
+                data-bs-toggle="modal"
+                data-bs-target="#logIn"
+              >
+                Sign In <i class="fas fa-sign-in-alt ml-3"></i>
+              </button>
+              <div class="modal" id="logIn">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" style="font-weight: bold">
+                        Sign In
+                      </h5>
+                      <button
+                        data-backdrop="false"
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                      ></button>
+                    </div>
+                    <div class="modal-body">
+                      <form>
+                        <div class="mb-3">
+                          <i class="fas fa-user prefix grey-text"></i>
+                          <label class="form-label required"
+                            >Email or Phone</label
+                          >
+                          <input
+                            type="text"
+                            class="form-control validate"
+                            required
+                          />
+                        </div>
+                        <div class="mb-3">
+                          <i class="fas fa-lock prefix grey-text"></i>
+                          <label class="form-label required">Password</label>
+                          <input
+                            type="password"
+                            class="form-control validate"
+                            required
+                          />
+                        </div>
+                      </form>
+                      <p
+                        class="font-small blue-text d-flex justify-content-end"
+                      >
+                        Forgot<a href="#" class="blue-text ml-1">Password?</a>
+                      </p>
+                    </div>
+                    <div class="modal-footer">
+                      <div class="d-grid gap-2 col-6 mx-auto">
+                        <button
+                          data-backdrop="false"
+                          type="submit"
+                          style="background-color: purple !important"
+                          class="btn btn-primary"
+                        >
+                          Sign In
+                        </button>
+                      </div>
+                      <p
+                        class="
+                          font-small
+                          dark-grey-text
+                          d-flex
+                          justify-content-center
+                        "
+                      >
+                        or sign in with:
+                      </p>
+
+                      <button
+                        type="button"
+                        class="btn btn-red z-depth-1a"
+                        data-backdrop="false"
+                      >
+                        <i class="fab fa-google-plus-g text-center"></i>
+                      </button>
+
+                      <p
+                        class="font-small black-text d-flex justify-content-end"
+                      >
+                        Don't have an account?<a
+                          href="#"
+                          style="text-decoration: none"
+                          class="blue-text ml-1"
+                          >Join Us Here</a
+                        >
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>-->
+<nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin-bottom: 15px;">
+	<a href="#" class="navbar-brand">TroTro<b>Live</b></a>
+	<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<!-- Collection of nav links, forms, and other content for toggling -->
+	<div id="navbarCollapse" class="collapse navbar-collapse justify-content-start">
+		<div class="navbar-nav">
+			<a href="/" class="nav-item nav-link">Home</a>
+			<a href="/company" class="nav-item nav-link">About</a>			
+			<a href="/team" class="nav-item nav-link">Team</a>
+			<a href="/company#carousel_0e20" class="nav-item nav-link">Contact</a>
+			<a href="/faq" class="nav-item nav-link">FAQs</a>
+
+		</div>
+		<div class="navbar-nav ml-auto action-buttons">
+			<div class="nav-item dropdown">
+				<a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle mr-4">Login</a>
+      <div class="dropdown-menu action-form login-form" style="width: 420px;">
+					<form action="" class="login-form" method="post" style="width: 392px; background-color: white;">
+						<p class="hint-text">Sign in with your social media account</p>
+						<div class="form-group social-btn clearfix">
+							<a href="#" class="btn btn-secondary facebook-btn float-left"><i class="fa fa-facebook"></i> GOOGLE</a>
+							<a href="#" class="btn btn-secondary twitter-btn float-right"><i class="fa fa-twitter"></i> Facebook</a>
+						</div>
+						<div class="or-seperator"><b>or</b></div>
+						<div class="form-group">
+							<input type="text" class="form-control" placeholder="Username" required="required">
+						</div>
+						<div class="form-group">
+							<input type="password" class="form-control" placeholder="Password" required="required">
+						</div>
+						<input type="submit" style="margin: 0; width: 350px;" class="btn btn-primary btn-block login-btn" value="Login">
+						<div class="text-center mt-2">
+							<a href="#">Forgot Your password?</a>
+						</div>
+					</form>
+                </div>
+			</div>
+			<div class="nav-item dropdown">
+				<a href="#" data-toggle="dropdown" class="btn btn-primary dropdown-toggle sign-up-btn">Sign up</a>
+                <div class="dropdown-menu action-form signup-form" style="width: 420px;">
+					<form action="" class="signup-form" method="post" style="width: 392px; background-color: white;">
+						<p class="hint-text">Fill in this form to create your account!</p>
+						<div class="form-group">
+							<input type="text" class="form-control" placeholder="Username" required="required">
+						</div>
+						<div class="form-group">
+							<input type="password" class="form-control" placeholder="Password" required="required">
+						</div>
+						<div class="form-group">
+							<input type="password" class="form-control" placeholder="Confirm Password" required="required">
+						</div>
+						<div class="form-group">
+							<label class="form-check-label"><input type="checkbox" required="required"> I accept the <a href="#">Terms &amp; Conditions</a></label>
+						</div>
+						<input type="submit"  style="margin: 0;" class="btn btn-primary btn-block" value="Sign up">
+					</form>
+				</div>
+			</div>
+        </div>
+	</div>
+</nav>
+    </header>
+    {% block body %} {% endblock %}
+    <section id="footer">
+      <footer>
+        <div class="container-footer">
+          <div class="sec aboutus">
+            <h2>About Us</h2>
+            <p>
+              Trotro.Live is the digital entity of your regular trotro transit.
+              According to Wikipedia, in Ghana and neighboring countries trotros
+              are private owned mini-buses or shared taxis that travel fixed
+              routes leaving when filled to capacity. We provide technical
+              support such as live update on the original fare, routing of
+              buses, recovering of missing items and others. TrotroLive, Dream
+              in Color.
+            </p>
+
+            <ul class="sci">
+              <li>
+                <a href="#"
+                  ><i class="fa fa-facebook" aria-hidden="true"></i
+                ></a>
+              </li>
+              <li>
+                <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+              </li>
+              <li>
+                <a href="#"
+                  ><i class="fa fa-instagram" aria-hidden="true"></i
+                ></a>
+              </li>
+              <li>
+                <a href="#"
+                  ><i class="fa fa-youtube-play" aria-hidden="true"></i
+                ></a>
+              </li>
+            </ul>
+          </div>
+          <div class="sec quicklinks">
+            <h2>Quick Links</h2>
+            <ul style="padding-left: 0px">
+              <li><a href="/company">About Us</a></li>
+              <li><a href="/faq">FAQ</a></li>
+              <li><a href="/company#carousel_0e20">Contact</a></li>
+              <li><a href="/team">Team</a></li>
+              <li><a href="/company#carousel_0e20">Help</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+            </ul>
+          </div>
+          <div class="sec contact">
+            <h2>Contact Info</h2>
+            <ul class="info" style="padding-left: 0px">
+              <li>
+                <span><i class="fa fa-building" aria-hidden="true"></i></span>
+                <span style="color: white"
+                  >647 Linda Street <br />Phionixville PA, 19460</span
+                >
+              </li>
+              <li>
+                <span><i class="fa fa-phone" aria-hidden="true"></i></span>
+                <p>
+                  <a href="tel:+23 3509103721">+23 3509103721</a><br />
+                  <a href="tel:+23 3509103721">+23 3509103721</a>
+                </p>
+              </li>
+              <li>
+                <span><i class="fa fa-envelope" aria-hidden="true"></i></span>
+                <p>
+                  <a href="mailto:trotrolive@gmail.com">trotrolive@gmail.com</a>
+                </p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </footer>
+      <div class="copyright">
+        <p>Copyright &copy; 2021 Solutions 404. All Rights Reserved.</p>
+      </div>
+    </section>
+    <!-- Bootstrap JS Only -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+      crossorigin="anonymous"
+    >
+  </script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+  <!-- Cookies -->
+  <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
+  <script src="{{ url_for('static', filename='cookie.js') }}"></script>
+  </body>
+</html>

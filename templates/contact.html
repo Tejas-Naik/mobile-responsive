@@ -1,0 +1,119 @@
+{% extends 'base.html' %} {% block title %}Contact us{% endblock %} 
+{% block style %}
+<link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}" />
+<link rel="stylesheet" href="{{ url_for('static', filename='navbar.css') }}" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href="{{ url_for('static', filename='contact-style.css') }}"/>
+{% endblock %} 
+{% block body %}
+     <!-- Contact Us Section -->
+      <section class="Material-contact-section section-padding section-dark">
+        <div class="container">
+          <div class="row">
+            <!-- Section Titile -->
+            <div class="col-md-12 wow animated fadeInLeft" data-wow-delay=".2s">
+              <h1 class="section-title">Love to Hear From You</h1>
+            </div>
+          </div>
+          <div class="row">
+            <!-- Section Titile -->
+            <div
+              class="col-md-6 mt-3 contact-widget-section2 wow animated fadeInLeft"
+              data-wow-delay=".2s"
+            >
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores ducimus harum amet praesentium, quis commodi et accusantium neque magni aspernatur iste assumenda ipsa, sunt molestiae ad optio quod ipsum illum.
+              </p>
+
+              <div class="find-widget">
+                Company: <a href="https://TroTro.live">TroTro Live</a>
+              </div>
+              <div class="find-widget">Address: <a href="#">address</a></div>
+              <div class="find-widget">
+                Phone: <a href="#">+ 111-222-3333</a>
+              </div>
+
+              <div class="find-widget">
+                Website: <a href="www.TroTro.live">www.TroTro.live</a>
+              </div>
+              <div class="find-widget">
+                Program: <a href="#">Mon to Sat: 09:30 AM - 10.30 PM</a>
+              </div>
+            </div>
+            <!-- contact form -->
+            <div class="col-md-6 wow animated fadeInRight" data-wow-delay=".2s">
+              <form
+                class="shake"
+                role="form"
+                method="post"
+                id="contactForm"
+                name="contact-form"
+                data-toggle="validator"
+              >
+                <!-- Name -->
+                <div class="form-group label-floating">
+                  <label class="control-label" for="name">Name</label>
+                  <input
+                    class="form-control"
+                    id="name"
+                    type="text"
+                    name="name"
+                    required
+                    data-error="Please enter your name"
+                  />
+                  <div class="help-block with-errors"></div>
+                </div>
+                <!-- email -->
+                <div class="form-group label-floating">
+                  <label class="control-label" for="email">Email</label>
+                  <input
+                    class="form-control"
+                    id="email"
+                    type="email"
+                    name="email"
+                    required
+                    data-error="Please enter your Email"
+                  />
+                  <div class="help-block with-errors"></div>
+                </div>
+                <!-- Subject -->
+                <div class="form-group label-floating">
+                  <label class="control-label">Subject</label>
+                  <input
+                    class="form-control"
+                    id="msg_subject"
+                    type="text"
+                    name="subject"
+                    required
+                    data-error="Please enter your message subject"
+                  />
+                  <div class="help-block with-errors"></div>
+                </div>
+                <!-- Message -->
+                <div class="form-group label-floating">
+                  <label for="message" class="control-label">Message</label>
+                  <textarea
+                    class="form-control"
+                    rows="3"
+                    id="message"
+                    name="message"
+                    required
+                    data-error="Write your message"
+                  ></textarea>
+                  <div class="help-block with-errors"></div>
+                </div>
+                <!-- Form Submit -->
+                <div class="form-submit mt-5">
+                  <button class="btn btn-common" type="submit" id="form-submit">
+                    <i class="material-icons mdi mdi-message-outline"></i> Send
+                    Message
+                  </button>
+                  <div id="msgSubmit" class="h3 text-center hidden"></div>
+                  <div class="clearfix"></div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+{% endblock %}

@@ -1,0 +1,277 @@
+{% extends 'base.html' %} {% block title %}TroTro Live{% endblock %} {% block
+style %}
+<link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}" />
+<link rel="stylesheet" href="{{ url_for('static', filename='navbar.css') }}" />
+
+{% endblock %} {% block body %}
+<section id="home-page">
+  <div class="showcase">
+    <img src="{{ url_for('static', filename='images/trotro-back.jpg') }}" class="banner" id="banner"/>
+    <form class='fare-form'>
+      <div class="text">
+        Wondering the cost of transportation from anywhere in country?
+      </div>
+        <div class="fare-form-renew">
+        <form action="">
+          <label for="" style="color: white;">Province: </label>
+          <input type="text" class='from' placeholder="Province">
+          <input type="text" class="from" placeholder='From...'>
+          <input type="text" class="to" placeholder="To...">
+          <input type="submit" class='submit' value="GO...">
+        </form>
+      </div>
+  
+    </div>
+      
+    
+      <br>
+      <h3 style="color: red;">{{same}}</h3>
+
+      <div>
+        {% for singlefar in singlefare %}
+        <h3>Fare from {{ src }} to {{ dest }} is: </h3>
+        <b>
+          <h2 style="color: green;">GH₵ {{ singlefar.fare }}0 p {{ singlefar.transit }}</h2>
+        </b>
+        {% endfor %}
+      </div>
+      <br>
+  </div>
+  </form>
+
+</section>
+
+<!-- Download android app -->
+<section id="app-section">
+  <h1 class="app-text">Download our app</h1>
+  <div id="android-app">
+    <div class="box1">
+      <img class="mobile-image" src="{{ url_for('static', filename='images/android_hd.png') }}" width="590" height="586"
+        alt="app" title="app" />
+    </div>
+    <div class="box2">
+      <h3>Best City Guide For Your Trotro/Taxi rides!</h3>
+      <br>
+      <h3>taxi app key features:</h3>
+      <br>
+      <ol>
+        <li>
+          <p class='app-specs'> Know your Trotro and Taxi Fares from point A (Kejetia) to point (Atonsu)</p>
+        </li>
+        <li>
+          <p class='app-specs'>Know routes the trotro/taxi is using to get desire locations</p>
+        </li>
+        <li>
+          <p class='app-specs'>Report and Track missing items in from trotro/taxi rides.</p>
+        </li>
+      </ol>
+      <!-- Download links -->
+      <div class="download-links">
+        <h3>Download now:</h3>
+        <p class='app-specs'>
+          This app will be available for: Android, iOS & Windows Store on 30June, 2021.
+        </p>
+        <div class="download-buttons">
+          <button class='android'>
+            <i class="fab fa-google-play fa-2x"></i>
+          </button>
+          <button class="ios" type="button">
+            <i class="fab fa-apple fa-2x"></i></a>
+          </button>
+          <button class="windows" type="button">
+            <i class="fab fa-windows fa-2x"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+</section>
+
+<!-- Reviews -->
+<section id="testimonials">
+  <h1>What partners say about us...</h1>
+  <div id="testimonial-carousel" class="carousel slide" data-ride="false">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <h2 class="testimonial-text">
+          More than 20 Millions people commute via trotro everyday, and guide app for trotro is unthinkable and
+          necessary.
+        </h2>
+        <img class="testimonial-image" src="{{ url_for('static', filename='images/godfred.jpg') }}" alt="dog-profile" />
+        <em style='color: white;'>Godfred - Founder.</em>
+      </div>
+      <div class="carousel-item">
+        <h2 class="testimonial-text">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime nam possimus autem incidun
+        </h2>
+        <img class="testimonial-image" src="{{ url_for('static', filename='review-images/lady-img.jpg') }}"
+          alt="lady-profile" />
+        <em style='color: white;'>Transportation</em>
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#testimonial-carousel" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#testimonial-carousel" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</section>
+
+<!-- Press -->
+
+<section id="press">
+  <img class="african-hack" src="{{ url_for('static', filename='review-images/AFRICAHACKS.png') }}"
+    alt="mashable-logo" />
+  <img class="press-image ispace" src="{{ url_for('static', filename='review-images/ISPACE.png') }}" alt="tnw-logo" />
+  <img class="press-image" src="{{ url_for('static', filename='review-images/ECOBANK.png') }}" alt="biz-insider-logo" />
+  <img class="press-image" src="{{ url_for('static', filename='review-images/GPRTU.png') }}" alt="mashable-logo" />
+  <img class="press-image c" src="{{ url_for('static', filename='review-images/COIL.png') }}" alt="tc-logo" />
+  <img class="press-image" src="{{ url_for('static', filename='review-images/DVLA.png') }}" alt="tnw-logo" />
+</section>
+
+<!-- Lost Property Section -->
+<section class="lost-property">
+  <div class="lost-text">
+    <h1 class='main-title-lost-property'>Lost Property</h1>
+    <p style='color: grey;'>did you lost something in one of our trotro?</p>
+    <p style='color: grey;'>no need to panic! we're keeping all lost & found items in our storage. just follow these 3
+      easy steps:</p>
+  </div>
+
+  <div class="d-flex steps">
+    <div class="steps-images">
+      <div class="img__wrap">
+        <img style="width: 300px; border-radius: 100%" class="img__img"
+          src="{{url_for('static', filename='images/step1.jpg')}}" />
+        <p class="img__description">remember when did you lose it.</p>
+      </div>
+    </div>
+    <div>
+      <div class="img__wrap">
+        <img style="width: 300px; border-radius: 100%" class="img__img"
+          src="{{url_for('static', filename='images/step2.jpg')}}" />
+        <p class="img__description">contact us via email or call us.</p>
+      </div>
+    </div>
+    <div>
+      <div class="img__wrap">
+        <img style="width: 300px; border-radius: 100%" class="img__img"
+          src="{{url_for('static', filename='images/step3.jpg')}}" />
+        <p class="img__description">
+          come to our storage and pick your item.
+        </p>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <p style='text-align: center;'>we value our clients deeply and we want you to be happy 🙂</p>
+  <button class='contact-btn'>Contact Us</button>
+</section>
+
+<!-- Taxis for sale -->
+<h1 class='taxi-heading'>Taxi/TroTro for sale</h1>
+<section id='taxi-sale'>
+  <div class="all-cards">
+
+    <div class="card car1">
+      <div class="card-image"><img src='' alt=""></div>
+      <div class="card-text">
+        <span class="date">Car company</span>
+        <h2>Car Name</h2>
+        <p>Lorem ipsum dolor sit amet consectetur, Ducimus, repudiandae temporibus omnis illum maxime quod deserunt
+          eligendi dolor</p>
+      </div>
+      <div class="card-stats">
+        <div class="stat">
+          <div class="value">40000</div>
+          <div class="type">KM driven</div>
+        </div>
+        <div class="stat border">
+          <div class="value">$5123</div>
+          <div class="type">price</div>
+        </div>
+        <div class="stat">
+          <div class="value">Buy</div>
+          <div class="type">now</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card car2">
+      <div class="card-image"></div>
+      <div class="card-text">
+        <span class="date">Car company</span>
+        <h2>Car Name</h2>
+        <p>Lorem ipsum dolor sit amet consectetur, Ducimus, repudiandae temporibus omnis illum maxime quod deserunt
+          eligendi dolor</p>
+      </div>
+      <div class="card-stats">
+        <div class="stat">
+          <div class="value">40000</div>
+          <div class="type">KM driven</div>
+        </div>
+        <div class="stat border">
+          <div class="value">$5123</div>
+          <div class="type">price</div>
+        </div>
+        <div class="stat">
+          <div class="value">32</div>
+          <div class="type">comments</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card car3">
+      <div class="card-image"></div>
+      <div class="card-text">
+        <span class="date">Car company</span>
+        <h2>Car Name</h2>
+        <p>Lorem ipsum dolor sit amet consectetur, Ducimus, repudiandae temporibus omnis illum maxime quod deserunt
+          eligendi dolor</p>
+      </div>
+      <div class="card-stats">
+        <div class="stat">
+          <div class="value">40000</div>
+          <div class="type">KM driven</div>
+        </div>
+        <div class="stat border">
+          <div class="value">5123</div>
+          <div class="type">views</div>
+        </div>
+        <div class="stat">
+          <div class="value">Buy</div>
+          <div class="type">Now</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<a href="/buysell"><button class='contact-btn'>Load More</button></a>
+<script type="text/javascript">
+  let image = document.getElementById("banner");
+  let images = [
+    "./static/slider-images/2.jpg",
+    "./static/slider-images/3.jpg",
+    "./static/slider-images/4.jpg",
+    "./static/slider-images/5.jpg",
+    "./static/slider-images/6.jpg",
+    "./static/slider-images/7.jpg",
+    "./static/slider-images/8.jpg",
+    "./static/slider-images/9.jpg",
+    "./static/slider-images/10.jpg",
+    "./static/slider-images/11.jpg",
+    "./static/slider-images/12.jpg",
+    "./static/slider-images/13.jpg",
+  ]
+  setInterval(function () {
+    let random = Math.floor(Math.random() * 12);
+    image.src = images[random];
+  }, 8000);
+</script>
+{% endblock %}

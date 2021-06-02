@@ -1,0 +1,84 @@
+{% extends 'base.html' %} {% block title %}TroTro Live{% endblock %} 
+{% block style %}
+<link rel="stylesheet" href="{{ url_for('static', filename='buysell.css') }}" />
+<link rel="stylesheet" href="{{ url_for('static', filename='navbar.css') }}" />
+{% endblock %} 
+{% block body %}
+<section id="taxi-sale">
+  <div class="all-cards">
+
+    <div class="card car1">
+      <div class="card-image"><img src='' alt=""></div>
+      <div class="card-text">
+        <span class="date">Car company</span>
+        <h2>Car Name</h2>
+        <p>Lorem ipsum dolor sit amet consectetur, Ducimus, repudiandae temporibus omnis illum maxime quod deserunt
+          eligendi dolor</p>
+      </div>
+      <div class="card-stats">
+        <div class="stat">
+          <div class="value">40000</div>
+          <div class="type">KM driven</div>
+        </div>
+        <div class="stat border">
+          <div class="value">$5123</div>
+          <div class="type">price</div>
+        </div>
+        <div class="stat">
+          <div class="value">Buy</div>
+          <div class="type">now</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card car2">
+      <div class="card-image"></div>
+      <div class="card-text">
+        <span class="date">Car company</span>
+        <h2>Car Name</h2>
+        <p>Lorem ipsum dolor sit amet consectetur, Ducimus, repudiandae temporibus omnis illum maxime quod deserunt
+          eligendi dolor</p>
+      </div>
+      <div class="card-stats">
+        <div class="stat">
+          <div class="value">40000</div>
+          <div class="type">KM driven</div>
+        </div>
+        <div class="stat border">
+          <div class="value">$5123</div>
+          <div class="type">price</div>
+        </div>
+        <div class="stat">
+          <div class="value">32</div>
+          <div class="type">comments</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card car3">
+      <div class="card-image"></div>
+      <div class="card-text">
+        <span class="date">Car company</span>
+        <h2>Car Name</h2>
+        <p>Lorem ipsum dolor sit amet consectetur, Ducimus, repudiandae temporibus omnis illum maxime quod deserunt
+          eligendi dolor</p>
+      </div>
+      <div class="card-stats">
+        <div class="stat">
+          <div class="value">40000</div>
+          <div class="type">KM driven</div>
+        </div>
+        <div class="stat border">
+          <div class="value">5123</div>
+          <div class="type">views</div>
+        </div>
+        <div class="stat">
+          <div class="value">Buy</div>
+          <div class="type">Now</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

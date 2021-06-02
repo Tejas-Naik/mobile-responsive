@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
+   <meta charset="UTF-8">
+
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   <script src="https://cdnjx.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <title>TroTro Live</title>
+</head>
+<body>
+   <header>
+      <br>
+     <div class="toptitle">
+        <ul>
+      <li>  <img class="banner2" src="{{ url_for('static', filename='images/logomod.png') }}"></li>
+   
+      <li><h4 class ="maintext" style="font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 30px; padding-top: 27px">TroTro LIVE</h4></li>
+   
+</ul>
+</div>
+<h5><marquee>The future is great with science and data </marquee></h5>
+      
+   <div class="menubar">
+      <ul>
+         <li ><a href="/">Home</a></li>
+         <li><a href="#">About Us</a>
+         <div class="submenu">
+            <ul>
+               <li><a href="/company">Company Info</a></li>
+               <li><a href="/team">Meet The Team</a></li>
+               <li><a href="#">Contact Info</a></li>
+            </ul>
+         </div>
+      </li>
+      <li><a href="#">TroTro Dairies
+      </a>
+      <div class="submenu">
+         <ul>
+            <li><a href="/member">Member Page</a></li>
+            <li><a href="#">General Travel</a></li>
+            <li><a href="#">Health Concerns</a></li>
+            <li><a href="#">Safety Measures</a></li>
+            <li><a href="#">FAQs</a></li>
+         </ul>
+      </div>
+   </li>
+   </ul>
+</div>
+
+<br>
+
+ 
+
+      <div class="mainbanner">
+         <img src="{{ url_for('static', filename='images/logo.jpg') }}" class="banner">
+
+         <br>
+         <div>
+            {% if g.userfname %}
+               <h3>{{ g.userfname.fname }}'s Profile</h3>
+            {% endif %}
+            {% if g.username %}
+               <h3>{{ g.username.name }}'s Profile</h3>
+            {% endif %}
+      </div>
+      <br>
+         {% with messages = get_flashed_messages() %}
+            {% if messages %}
+               <ul>
+                  {% for message in messages %}
+                  <li>{{ message }}</li>
+                  {% endfor %}
+               </ul>
+            {% endif %}
+         {% endwith %}
+<div>
+  <h3>{{same}}</h3>
+</div>
+
+    <div>  
+      {% for singlefar in singlefare %} 
+      Fare from {{ src }} to {{ dest }} is:         
+      <h2>GH₵ {{ singlefar.fare }}0 p  {{ singlefar.transit }}</h2>
+      {% endfor %}
+    </div>
+</div>
+  </header>
+
+
+<br>
+<div class="center"></div>
+<div class="form22">
+   You can help us keep our data up to date by <a href="/suggest">Suggesting a Fare</a>
+   <h2>Select a Providence</h2>
+   <form action="/selectcity" method="POST">
+   
+   <label for='city'>City: </label>
+   <select id='city' name="city">
+     <option value="kumasi">Kumasi</option>
+     <option value="sefwi">Sefwi</option>
+     <option value="obuasi">Obuasi</option>
+     <option value="accra">Accra</option>
+     
+   </select>
+       <input type="submit", value="Next">
+   <br>
+   <b><a href="/logout" style="color: red;"> Log out</a></b>
+   </form>
+    <br>
+    <div>
+      {{ name }}
+    </div>
+</div>
+</div>
+
+   <footer> 
+   
+<div class="menuu">
+ <p>Copyright &copy; 2020 TroTro Live Ltd . <a href="/company">Company Information</a></p>
+ <p2><a href="/privacy">Privacy Terms</a></p2>
+</div>
+</footer>
+</body>
+</html>
